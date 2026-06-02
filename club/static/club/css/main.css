@@ -67,7 +67,8 @@ a:hover {
 .header-inner {
   max-width: 1140px;
   margin: 0 auto;
-  padding: 0.6rem 1.25rem;
+  padding: 0.45rem 1.25rem;
+  min-height: 4.5rem;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -76,20 +77,35 @@ a:hover {
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.85rem;
   color: var(--white);
   text-decoration: none;
+  flex-shrink: 0;
+  margin-right: 0.25rem;
 }
 
 .brand:hover {
   color: var(--spu-blue);
 }
 
+.brand-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
 .brand img {
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
-  border: 2px solid var(--spu-pink-soft);
+  display: block;
+  width: auto;
+  height: 4.25rem;
+  max-width: min(220px, 42vw);
+  border: none;
+  border-radius: 0;
+  object-fit: contain;
+  object-position: left center;
+  background: transparent;
+  box-shadow: none;
 }
 
 .brand-text strong {
@@ -568,6 +584,30 @@ a:hover {
   color: var(--spu-pink);
 }
 
+.project-detail .section-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.project-detail p {
+  margin: 0 0 0.85rem;
+  color: var(--text);
+}
+
+.project-list {
+  margin: 0;
+  padding-left: 1.35rem;
+}
+
+.project-list li {
+  margin-bottom: 0.55rem;
+  color: var(--text-muted);
+}
+
+.project-list li::marker {
+  color: var(--spu-pink);
+}
+
 .site-footer {
   background: var(--navy);
   color: rgba(255, 255, 255, 0.75);
@@ -595,6 +635,15 @@ a:hover {
 }
 
 @media (max-width: 900px) {
+  .brand img {
+    height: 3.25rem;
+    max-width: 160px;
+  }
+
+  .brand-text span {
+    display: none;
+  }
+
   .nav-toggle {
     display: block;
   }

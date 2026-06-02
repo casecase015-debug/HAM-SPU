@@ -16,7 +16,9 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="{% url 'home' %}">
-        <img src="{% static 'club/img/logo.png' %}" alt="โลโก้ {{ SITE_SHORT }}" width="46" height="46">
+        <span class="brand-logo">
+          <img src="{% static 'club/img/logo.png' %}" alt="โลโก้ {{ SITE_SHORT }}">
+        </span>
         <span class="brand-text">
           <strong>{{ SITE_SHORT }}</strong>
           <span>{{ SITE_NAME }}</span>

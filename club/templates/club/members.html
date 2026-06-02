@@ -3,19 +3,18 @@
 {% block content %}
 <div class="page-hero">
   <h1>สมาชิกชมรม</h1>
-  <p>รายชื่อชุดแรกจากเอกสารจัดตั้ง — ไม่โชว์ข้อมูลส่วนตัวแบบละเอียด</p>
+  <p>รายชื่อชุดแรกจากเอกสารจัดตั้ง</p>
 </div>
 
 <section class="section">
   <div class="section-inner surface">
-    <input type="search" class="search-input" id="member-search" placeholder="ค้นหาชื่อ รหัส หรือคณะ..." autocomplete="off">
+    <input type="search" class="search-input" id="member-search" placeholder="ค้นหาชื่อ คณะ หรือสาขา..." autocomplete="off">
     <div class="table-wrap">
       <table class="data-table" id="members-table">
         <thead>
           <tr>
             <th>#</th>
             <th>ชื่อ</th>
-            <th>รหัส</th>
             <th>คณะ</th>
             <th>สาขา</th>
           </tr>
@@ -25,7 +24,6 @@
           <tr>
             <td>{{ forloop.counter }}</td>
             <td>{{ m.name }}</td>
-            <td>{{ m.id }}</td>
             <td>{{ m.faculty }}</td>
             <td>{{ m.major }}</td>
           </tr>
@@ -42,5 +40,5 @@
 </section>
 {% endblock %}
 {% block extra_js %}
-<script>filterTable("member-search", "members-table", [1, 2, 3, 4]);</script>
+<script>filterTable("member-search", "members-table", [1, 2, 3]);</script>
 {% endblock %}

@@ -48,7 +48,10 @@ def project(request):
     return render(
         request,
         "club/project.html",
-        {"focus_areas": data.PROJECT_FOCUS},
+        {
+            "focus_areas": data.PROJECT_FOCUS,
+            "project_sections": data.PROJECT_SECTIONS,
+        },
     )
 
 
