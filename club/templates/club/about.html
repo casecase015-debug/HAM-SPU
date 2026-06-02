@@ -1,0 +1,43 @@
+{% extends "club/base.html" %}
+{% block title %}เกี่ยวกับเรา{% endblock %}
+{% block content %}
+<div class="page-hero">
+  <h1>เกี่ยวกับ {{ SITE_SHORT }}</h1>
+  <p>ไม่ต้องอ่านแบบฟอร์มยาวๆ — สรุปให้แล้ว</p>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <h2 class="section-title">เราทำอะไรบ้าง</h2>
+    <div class="card-grid">
+      {% for obj in objectives %}
+      <article class="mini-card">
+        <h3>{{ obj.title }}</h3>
+        <p>{{ obj.body }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="section-inner surface">
+    <h2 class="section-title">อาจารย์ที่ปรึกษา</h2>
+    <p class="section-sub">ทีมใหญ่ที่ช่วยกำกับให้เราไม่หลงทาง</p>
+    <div class="card-grid">
+      {% for a in advisors %}
+      <article class="mini-card">
+        <h3>{{ a.name }}</h3>
+        <p>{{ a.unit }}<br>
+          <a href="mailto:{{ a.email }}">{{ a.email }}</a><br>
+          {{ a.phone }}</p>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="{% url 'team' %}">ดูคณะกรรมการนักศึกษา</a>
+      <a class="btn btn-navy" href="mailto:{{ CONTACT_EMAIL }}">ทักประธานชมรม</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

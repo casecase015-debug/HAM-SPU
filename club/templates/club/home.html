@@ -1,0 +1,55 @@
+{% extends "club/base.html" %}
+{% block title %}หน้าแรก{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-chip">ปี 2569 · ชมรมใหม่เอี่ยม</span>
+    <h1>สวัสดีจาก <span class="accent">{{ SITE_SHORT }}</span></h1>
+    <p class="hero-lead">
+      ชมรมวิทยุสมัครเล่น ม.ศรีปทุม — ที่มาเล่นวิทยุ เรียนรู้สื่อสารไร้สาย
+      และช่วยประสานงานเวลาเกิดเหตุฉุกเฉิน (แบบไม่เครียดมาก)
+    </p>
+    <div class="hero-pills">
+      <span class="pill">สังกัด อบน. ม.ศรีปทุม</span>
+      <span class="pill">USR + วิชาการ</span>
+      <span class="pill">สีฟ้า-ชมพู คนม.ศรีปทุม</span>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="{% url 'about' %}">รู้จักเรา</a>
+      <a class="btn btn-ghost" href="{% url 'members' %}">อยากเข้าชมรม?</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <h2 class="section-title">เราคือใคร</h2>
+    <p class="section-sub">สรุปสั้นๆ — รายละเอียดเต็มอยู่ในเมนูด้านบนนะ</p>
+    <div class="surface surface--gradient">
+      <p style="margin-top:0">
+        <strong>{{ SITE_NAME }}</strong> สังกัด <strong>องค์การบริหารนักศึกษา มหาวิทยาลัยศรีปทุม (กรุงเทพฯ)</strong>
+        กำลังจัดตั้งในปีการศึกษา 2569 โดยกลุ่มนักศึกษาที่อยากให้มหาวิทยาลัยมีพื้นที่เรียนรู้วิทยุฯ
+        อิเล็กทรอนิกส์ และการสื่อสารสำรองแบบจริงจัง (แต่สนุกได้)
+      </p>
+      <p style="margin-bottom:0">
+        เป้าหมายใหญ่ๆ คือ ส่งเสริมการเรียนรู้เชิงปฏิบัติ พัฒนาทักษาระหว่างเหตุฉุกเฉิน
+        ทำกิจกรรม USR และวางรากสถานีวิทยุ / เครือข่ายอุดมศึกษาในอนาคต
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="section-inner">
+    <h2 class="section-title">อยากรู้อะไร กดได้เลย</h2>
+    <div class="card-grid">
+      <a class="link-card" href="{% url 'policy' %}"><article class="mini-card"><h3>📋 นโยบายสื่อสาร</h3><p>กติกาใช้ความถี่ อุปกรณ์ และสถานีชมรม</p></article></a>
+      <a class="link-card" href="{% url 'callsign' %}"><article class="mini-card"><h3>📻 สัญญาณเรียกขาน</h3><p>บัญชี ศรีปทุม 1–508 ค้นหาได้</p></article></a>
+      <a class="link-card" href="{% url 'frequencies' %}"><article class="mini-card"><h3>📡 ตารางความถี่</h3><p>ช่องใช้งานใน ม.ศรีปทุม + VRA</p></article></a>
+      <a class="link-card" href="{% url 'project' %}"><article class="mini-card"><h3>🛰 โครงการศูนย์วิทยุฯ</h3><p><span class="badge badge-plan">วางแผนอยู่</span> ยังไม่ลงมือทำ</p></article></a>
+      <a class="link-card" href="{% url 'team' %}"><article class="mini-card"><h3>👥 ทีมงาน</h3><p>คณะกรรมการ + อาจารย์ที่ปรึกษา</p></article></a>
+      <a class="link-card" href="{% url 'members' %}"><article class="mini-card"><h3>✨ สมาชิก</h3><p>รายชื่อชุดแรก + ช่องทางสมัคร</p></article></a>
+    </div>
+  </div>
+</section>
+{% endblock %}

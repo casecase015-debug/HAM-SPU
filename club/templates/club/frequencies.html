@@ -1,0 +1,50 @@
+{% extends "club/base.html" %}
+{% block title %}ตารางความถี่{% endblock %}
+{% block content %}
+<div class="page-hero">
+  <h1>ตารางความถี่</h1>
+  <p>อ้างอิง ศธ 0201.3/4905 — ใช้ภายใน ม.ศรีปทุมเท่านั้น</p>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="note">
+      <strong>สำคัญ:</strong> ห้ามแชร์ตารางนี้ออกนอกมหาวิทยาลัยโดยเด็ดขาด ใช้ตาม กสทช. และระเบียบ ม.ศรีปทุม
+    </div>
+
+    <h2 class="section-title">ภายใน ม.ศรีปทุม</h2>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>หน่วยงาน</th><th>MHz</th><th>ระบบ</th><th>หมายเหตุ</th></tr>
+        </thead>
+        <tbody>
+          {% for row in freq_internal %}
+          <tr>
+            {% for cell in row %}<td>{{ cell }}</td>{% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="section-title" style="margin-top:2rem">เครือข่าย VRA</h2>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>สถานี</th><th>ความถี่</th><th>ระบบ</th><th>หมายเหตุ</th></tr>
+        </thead>
+        <tbody>
+          {% for row in freq_vra %}
+          <tr>
+            {% for cell in row %}<td>{{ cell }}</td>{% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="section-sub" style="margin-top:1.5rem">ตารางเต็ม (หน่วยงานภายนอก, repeater อว.) ดูในเอกสารต้นฉบับชมรม</p>
+  </div>
+</section>
+{% endblock %}

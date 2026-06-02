@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ SITE_SHORT }}{% endblock %} | {{ SITE_NAME }}</title>
+  <meta name="description" content="{% block meta_description %}{{ SITE_TAGLINE }}{% endblock %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'club/css/main.css' %}">
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="{% url 'home' %}">
+        <img src="{% static 'club/img/logo.png' %}" alt="โลโก้ {{ SITE_SHORT }}" width="46" height="46">
+        <span class="brand-text">
+          <strong>{{ SITE_SHORT }}</strong>
+          <span>{{ SITE_NAME }}</span>
+        </span>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav">เมนู</button>
+      <nav class="site-nav" id="main-nav" aria-label="เมนูหลัก">
+        <ul>
+          <li><a href="{% url 'home' %}" {% if active == 'home' %}class="active"{% endif %}>หน้าแรก</a></li>
+          <li><a href="{% url 'about' %}" {% if active == 'about' %}class="active"{% endif %}>เกี่ยวกับเรา</a></li>
+          <li><a href="{% url 'policy' %}" {% if active == 'policy' %}class="active"{% endif %}>นโยบาย</a></li>
+          <li><a href="{% url 'callsign' %}" {% if active == 'callsign' %}class="active"{% endif %}>เรียกขาน</a></li>
+          <li><a href="{% url 'frequencies' %}" {% if active == 'frequencies' %}class="active"{% endif %}>ความถี่</a></li>
+          <li><a href="{% url 'project' %}" {% if active == 'project' %}class="active"{% endif %}>โครงการ</a></li>
+          <li><a href="{% url 'team' %}" {% if active == 'team' %}class="active"{% endif %}>ทีมงาน</a></li>
+          <li class="nav-cta"><a href="{% url 'members' %}" {% if active == 'members' %}class="active"{% endif %}>สมาชิก</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>{{ SITE_SHORT }}</strong> — {{ SITE_NAME }}<br>
+        สังกัดองค์การบริหารนักศึกษา · ปีการศึกษา 2569<br>
+        <a href="mailto:{{ CONTACT_EMAIL }}">{{ CONTACT_EMAIL }}</a>
+      </div>
+      <div>
+        {{ SITE_TAGLINE }}<br>
+        73 จากหัวใจนักศึกษา ม.ศรีปทุม
+      </div>
+    </div>
+  </footer>
+  <script src="{% static 'club/js/site.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

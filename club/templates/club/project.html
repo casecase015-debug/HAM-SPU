@@ -1,0 +1,38 @@
+{% extends "club/base.html" %}
+{% block title %}โครงการ{% endblock %}
+{% block content %}
+<div class="page-hero">
+  <h1>โครงการศูนย์วิทยุคมนาคม</h1>
+  <p>SPU Amateur Radio &amp; Telecommunications Education Center</p>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <p><span class="badge badge-plan">ยังเป็นแผน — ยังไม่ลงมือทำจริง</span></p>
+    <div class="surface surface--dark" style="margin-top:1rem">
+      <p style="margin-top:0">
+        โครงการนี้เป็น <strong>วิสัยทัศน์ระยะยาว</strong> แยกจากชมรมนักศึกษาที่กำลังจัดตั้งอยู่ตอนนี้
+        เป้าคือมีห้องศูนย์วิทยุคมนาคม SDR Lab และเครือข่าย Emergency Communication ใน ม.ศรีปทุม
+      </p>
+      <div class="tag-cloud" style="margin-top:1rem">
+        {% for tag in focus_areas %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </div>
+
+    <h2 class="section-title" style="margin-top:2rem">อยากทำอะไรบ้าง (ตามแผน)</h2>
+    <div class="card-grid">
+      <article class="mini-card"><h3>สถานี + ห้องแล็บ</h3><p>สถานีวิทยุฯ และ Mini SDR Lab ในห้องเฉพาะทาง</p></article>
+      <article class="mini-card"><h3>APRS &amp; Emergency Net</h3><p>ระบบติดตามและสื่อสารฉุกเฉินในมหาวิทยาลัย</p></article>
+      <article class="mini-card"><h3>กิจกรรมสนุกๆ</h3><p>CQ DX Portable, ARDF ระดับอุดมศึกษา</p></article>
+      <article class="mini-card"><h3>เครือข่าย</h3><p>ร่วมมือ ม. ภาครัฐ รัฐวิสาหกิจ และ ham ทั่วประเทศ</p></article>
+    </div>
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="{% url 'about' %}">กลับไปชมรมที่กำลังทำอยู่</a>
+      <a class="btn btn-navy" href="{% url 'home' %}">หน้าแรก</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

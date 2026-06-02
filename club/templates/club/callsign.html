@@ -1,0 +1,35 @@
+{% extends "club/base.html" %}
+{% block title %}สัญญาณเรียกขาน{% endblock %}
+{% block content %}
+<div class="page-hero">
+  <h1>สัญญาณเรียกขาน</h1>
+  <p>บัญชี ศรีปทุม — ค้นหาชื่อตำแหน่งได้เลย</p>
+</div>
+
+<section class="section">
+  <div class="section-inner surface">
+    <p>ศูนย์วิทยุสื่อสารศรีปทุม กำหนดนามเรียกขานมาตรฐานเดียวทั้ง ม.ศรีปทุม</p>
+    <input type="search" class="search-input" id="call-search" placeholder="พิมพ์ชื่อเรียกขานหรือตำแหน่ง..." autocomplete="off">
+    <div class="table-wrap">
+      <table class="data-table" id="callsign-table">
+        <thead>
+          <tr><th>#</th><th>เรียกขาน</th><th>ตำแหน่ง / หน่วยงาน</th></tr>
+        </thead>
+        <tbody>
+          {% for c in callsigns %}
+          <tr>
+            <td>{{ c.no }}</td>
+            <td><strong>{{ c.call }}</strong></td>
+            <td>{{ c.role }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="note">ใช้งานจริงต้องปฏิบัติตามระเบียบ ม.ศรีปทุม และ กสทช. นะครับ/ค่ะ</div>
+  </div>
+</section>
+{% endblock %}
+{% block extra_js %}
+<script>filterTable("call-search", "callsign-table", [1, 2]);</script>
+{% endblock %}

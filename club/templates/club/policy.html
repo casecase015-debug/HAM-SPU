@@ -1,0 +1,40 @@
+{% extends "club/base.html" %}
+{% block title %}นโยบาย{% endblock %}
+{% block content %}
+<div class="page-hero">
+  <h1>นโยบายการสื่อสาร</h1>
+  <p>กติกาใช้วิทยุและอุปกรณ์ — อ่านแล้วเล่นได้สบายใจ</p>
+</div>
+
+<section class="section">
+  <div class="section-inner surface policy">
+    <p>กรอบนี้ทำให้ชมรมใช้ความถี่และอุปกรณ์ได้ถูกต้อง โปร่งใส ตาม กสทช. และ VRA</p>
+
+    <h3>ขอบเขต</h3>
+    <ul>
+      <li>ระบบสื่อสาร + ประสานงานหน่วยงาน / สมาคม / สถานีควบคุมข่าย</li>
+      <li>จัดการอุปกรณ์ ทะเบียน เบิก–ยืม</li>
+      <li>Club Station และงานร่วม VRA</li>
+    </ul>
+
+    <h3>นโยบายหลัก (สรุป)</h3>
+    <ul>
+      <li><strong>วางแผน:</strong> สถานีหลัก–สำรอง คู่มือ ผังเครือข่าย</li>
+      <li><strong>อุปกรณ์:</strong> ตรวจสภาพ ทะเบียน รายงานครุภัณฑ์ กสทช.</li>
+      <li><strong>กิจกรรม:</strong> Mobile Kit, SPU Field Day</li>
+      <li><strong>เครือข่าย:</strong> ประสาน VRA และหน่วยงานราชการ</li>
+      <li><strong>เรียนรู้:</strong> อบรมใบอนุญาต จรรยาบรรณ ซ้อม Club Station</li>
+    </ul>
+
+    <h3>ติดตามผล</h3>
+    <ul>
+      <li>ประเมินหลังกิจกรรม + รายงานสรุป</li>
+      <li>ทบทวนนโยบายปีละครั้ง</li>
+      <li>LOG BOOK ตามระเบียบ กสทช. พ.ศ. 2530 ข้อ 43</li>
+    </ul>
+
+    <p><strong>ผู้รับผิดชอบ:</strong> ประธานชมรม · คณะกรรมการ · พนักงานวิทยุประจำสถานี</p>
+    <a class="btn btn-primary" href="{% url 'frequencies' %}">ดูตารางความถี่ →</a>
+  </div>
+</section>
+{% endblock %}
